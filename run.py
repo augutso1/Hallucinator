@@ -6,8 +6,12 @@ from nltk.tokenize import sent_tokenize
 from groq import Groq
 from sentence_transformers import SentenceTransformer, util
 import torch
+import os
 
-GROQ_API_KEY = "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"
+# Get API key from environment variable
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+if not GROQ_API_KEY:
+    raise ValueError("Please set the GROQ_API_KEY environment variable")
 
 client = Groq(api_key=GROQ_API_KEY)
 model = SentenceTransformer('all-MiniLM-L6-v2')
