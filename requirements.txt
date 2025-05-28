@@ -1,0 +1,4 @@
+transformers>=4.36.0
+bert-score>=0.3.13
+nltk>=3.8.1
+torch>=2.1.0  # Required by transformers 
