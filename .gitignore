@@ -1,7 +1,3 @@
-# Environment variables
-.env
-.env.*
-
 # Python
 __pycache__/
 *.py[cod]
@@ -25,10 +21,10 @@ wheels/
 *.egg
 
 # Virtual Environment
-.venv
-env/
 venv/
+env/
 ENV/
+.env
 
 # IDE
 .idea/
@@ -37,18 +33,17 @@ ENV/
 *.swo
 .DS_Store
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Project specific
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
 
-# Model files and data
+# Model files and large data
+*.bin
 *.pt
 *.pth
-*.bin
-*.h5
-*.ckpt
-*.nltk_data/
-
-# Logs
-*.log
-logs/
-tensorboard/ 
+*.onnx
+models/
+data/ 

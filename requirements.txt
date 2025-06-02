@@ -1,4 +1,27 @@
-transformers>=4.36.0
-bert-score>=0.3.13
-nltk>=3.8.1
-torch>=2.1.0  # Required by transformers 
+# Core ML dependencies (optimized for Apple Silicon)
+torch>=2.0.0,<3.0.0  # PyTorch with MPS support
+numpy>=1.21.0,<2.0.0  # Required for numerical operations
+groq>=0.4.0,<1.0.0  # Groq API client for model inference
+
+# NLP and Text Processing
+spacy>=3.4.0,<4.0.0  # For sentence segmentation
+sentence-transformers>=2.2.0,<3.0.0  # For semantic similarity
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl  # Required spaCy model
+
+# Progress and HTTP
+tqdm>=4.64.0,<5.0.0  # Progress bars
+requests>=2.28.0,<3.0.0  # HTTP client
+
+# Optional but recommended
+colorama>=0.4.6  # For colored terminal output
+rich>=13.0.0  # For enhanced terminal formatting
+
+# Installation Notes for M1/M2 Macs:
+# 1. Install PyTorch with MPS support:
+#    pip install torch torchvision torchaudio
+#
+# 2. Install sentence-transformers with specific version:
+#    pip install --upgrade --no-deps --force-reinstall sentence-transformers==2.2.2
+#
+# 3. Install spaCy model:
+#    python -m spacy download en_core_web_sm
