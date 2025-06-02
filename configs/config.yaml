@@ -1,0 +1,51 @@
+# SelfCheckGPT Configuration
+
+# Model Settings
+models:
+  - name: "gemma2-9b-it"
+    temperature: 0.8
+    max_tokens: 1024
+    top_p: 0.9
+  - name: "meta-llama/llama-4-scout-17b-16e-instruct"
+    temperature: 0.8
+    max_tokens: 1024
+    top_p: 0.9
+  - name: "mistral-saba-24b"
+    temperature: 0.8
+    max_tokens: 1024
+    top_p: 0.9
+
+# Detection Methods
+methods:
+  nli:
+    enabled: true
+    threshold: 0.5
+  similarity:
+    enabled: true
+    threshold: 0.5
+    model: "all-MiniLM-L6-v2"
+  ngram:
+    enabled: true
+    threshold: 0.5
+    n: 1
+  llm_prompt:
+    enabled: true
+    threshold: 0.5
+    model: "llama-3.1-8b-instant"
+    temperature: 0.1
+    max_tokens: 10
+
+# System Settings
+system:
+  num_samples: 3
+  device: "auto" # auto, mps, cuda, cpu
+  batch_size: 32
+  cache_dir: "data/processed"
+  log_level: "INFO"
+
+# API Settings
+api:
+  groq:
+    timeout: 30
+    retries: 3
+    backoff_factor: 2

@@ -46,4 +46,26 @@ htmlcov/
 *.pth
 *.onnx
 models/
-data/ 
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Documentation
+docs/_build/
+site/
+
+# Testing
+.coverage
+coverage.xml
+.pytest_cache/
+htmlcov/ 
